@@ -1,0 +1,31 @@
+name: Deploy Project
+on: push
+jobs:
+    lint:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Lint code
+              run: npm run lint
+
+    test:
+        runs-on: ubuntu-22.04
+        needs: lint
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Test code
+              run: npm run test
+
+    deploy:
+        runs-on: ubuntu-22.04
+        needs: test
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Deploy code
+              run: echo "Deploying ..."
