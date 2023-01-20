@@ -2,6 +2,8 @@ name: Output issues
 on:
     issues:
         types: [opened]
+    workflow_dispatch:
+
 jobs:
     log:
         runs-on: ubuntu-22.04
