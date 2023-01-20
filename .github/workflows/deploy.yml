@@ -7,6 +7,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v3
 
+            - name: Install code
+              run: npm ci
+
             - name: Lint code
               run: npm run lint
 
@@ -17,6 +20,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v3
 
+            - name: Install code
+              run: npm ci
+
             - name: Test code
               run: npm run test
 
@@ -26,6 +32,9 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
+
+            - name: Install code
+              run: npm ci
 
             - name: Deploy code
               run: echo "Deploying ..."
